@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsReporter'
@@ -21,6 +21,7 @@ import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
+import GeofenceModal from '../components/GeofenceModal'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -58,6 +59,9 @@ const Marginer = styled.div`
 `
 
 export default function App() {
+  // modal and loading
+  const [showConfirm, setShowConfirm] = useState<boolean>(true)
+
   return (
     <Suspense fallback={null}>
       <HashRouter>
@@ -69,6 +73,13 @@ export default function App() {
           </HeaderWrapper>
           <BodyWrapper>
             <Popups />
+            <GeofenceModal
+              isOpen={showConfirm}
+              onDismiss={() => {
+                setShowConfirm(false)
+              }}
+              title=""
+            />
             <Web3ReactManager>
               <Switch>
                 <Route exact strict path="/swap" component={Swap} />
