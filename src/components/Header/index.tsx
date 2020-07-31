@@ -6,7 +6,7 @@ import { Text } from 'rebass'
 import styled from 'styled-components'
 
 import Logo from '../../assets/svg/logo.svg'
-import LogoDark from '../../assets/svg/logo_white.svg'
+import LogoDark from '../../assets/images/suku-swap.png'
 import Wordmark from '../../assets/svg/wordmark.svg'
 import WordmarkDark from '../../assets/svg/wordmark_white.svg'
 import { useActiveWeb3React } from '../../hooks'
@@ -98,9 +98,8 @@ const NetworkCard = styled(YellowCard)`
 `
 
 const UniIcon = styled.div`
-  transition: transform 0.3s ease;
-  :hover {
-    transform: rotate(-5deg);
+  img {
+    width: 10.5rem;
   }
   ${({ theme }) => theme.mediaWidth.upToSmall`
     img { 
@@ -148,9 +147,6 @@ export default function Header() {
             <UniIcon>
               <img src={isDark ? LogoDark : Logo} alt="logo" />
             </UniIcon>
-            <TitleText>
-              <img style={{ marginLeft: '4px', marginTop: '4px' }} src={isDark ? WordmarkDark : Wordmark} alt="logo" />
-            </TitleText>
           </Title>
         </HeaderElement>
         <HeaderControls>
