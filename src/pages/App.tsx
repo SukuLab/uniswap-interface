@@ -20,6 +20,7 @@ import PoolFinder from './PoolFinder'
 import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
+import Rewards from './Rewards'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import GeofenceModal from '../components/GeofenceModal'
 
@@ -82,6 +83,7 @@ export default function App() {
             />
             <Web3ReactManager>
               <Switch>
+                <Route exact strict path="/rewards" component={Rewards} />
                 <Route exact strict path="/swap" component={Swap} />
                 <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
                 <Route exact strict path="/send" component={RedirectPathToSwapOnly} />

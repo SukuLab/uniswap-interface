@@ -108,6 +108,19 @@ const UniIcon = styled.div`
   `};
 `
 
+const SukuIcon = styled.div`
+  img {
+    padding-left: 1rem;
+    height: 6rem;
+  }
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    img { 
+      padding-left: .5rem;
+      height: 2.5rem;
+    }
+  `};
+`
+
 const HeaderControls = styled.div`
   display: flex;
   flex-direction: row;
@@ -144,9 +157,9 @@ export default function Header() {
       <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
         <HeaderElement>
           <Title href=".">
-            <UniIcon>
+            <SukuIcon>
               <img src={isDark ? LogoDark : Logo} alt="logo" />
-            </UniIcon>
+            </SukuIcon>
           </Title>
         </HeaderElement>
         <HeaderControls>
