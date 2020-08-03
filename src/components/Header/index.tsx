@@ -139,7 +139,7 @@ const SukuIcon = styled.div`
 const HeaderControls = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: flex-end;
 
   /* ${({ theme }) => theme.mediaWidth.upToSmall`
     flex-direction: column;
