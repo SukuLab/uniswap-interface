@@ -7,7 +7,7 @@ import { SwapPoolTabs } from '../../components/NavigationTabs'
 import Question from '../../components/QuestionHelper'
 import FullPositionCard from '../../components/PositionCard'
 import { useUserHasLiquidityInAllTokens } from '../../data/V1'
-import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
+import { useTokenBalancesWithLoadingIndicator, useTokenBalance } from '../../state/wallet/hooks'
 import { StyledInternalLink, TYPE } from '../../theme'
 import { Text } from 'rebass'
 import { LightCard } from '../../components/Card'
@@ -18,12 +18,21 @@ import { AutoColumn } from '../../components/Column'
 import { useActiveWeb3React } from '../../hooks'
 import { usePairs } from '../../data/Reserves'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
+import { useToken } from '../../hooks/Tokens'
 import AppBody from '../AppBody'
 import { Dots } from '../../components/swap/styleds'
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
   const { account } = useActiveWeb3React()
+  const sukuToken = useToken('0x0763fdccf1ae541a5961815c0872a8c5bc6de4d7')
+
+  // fetch the balance of the rewards account
+  // TODO: Pull Rewards address out into env variable
+  const rewardBalance = useTokenBalance('0xc05ec5235ce6050375adce1f86bbec949c3c366f', sukuToken ?? undefined)
+  const sukuRewardsText = rewardBalance
+    ? `${parseInt(rewardBalance.toSignificant(4)).toLocaleString()} SUKU`
+    : `Loading`
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
@@ -101,7 +110,7 @@ export default function Pool() {
             </RowBetween>
             <LightCard padding="20px">
               <TYPE.largeHeader color={theme.primary1} textAlign="center">
-                1,600,000 SUKU
+                {sukuRewardsText}
               </TYPE.largeHeader>
             </LightCard>
           </AutoColumn>
@@ -136,7 +145,6 @@ export default function Pool() {
             ) : (
               <LightCard padding="40px">
                 <TYPE.body color={theme.text3} textAlign="center">
-                  {/* TODO: Find Current Share Ownership of Pool Tokens */}
                   {/* TODO: Find Current Share Ownership of Pool Tokens * value of tokens (etherscan api) */}
                   No liquidity found.
                 </TYPE.body>
