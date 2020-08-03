@@ -44,7 +44,7 @@ const StyledNavLink = styled(NavLink).attrs({
 `
 
 // NOTE: Rewards Addition
-const GoldStyledNav = styled(StyledNavLink)`
+const RewardsStyledNav = styled(StyledNavLink)`
   color: ${({ theme }) => theme.rewardsText};
   font-size: 20px;
 
@@ -72,9 +72,9 @@ export function SwapPoolTabs({ active }: { active: 'rewards' | 'swap' | 'pool' }
   return (
     <Tabs style={{ marginBottom: '20px' }}>
       {/* NOTE: Rewards addition */}
-      <GoldStyledNav id={`swap-nav-link`} to={'/rewards'} isActive={() => active === 'rewards'}>
+      <StyledNavLink id={`swap-nav-link`} to={'/rewards'} isActive={() => active === 'rewards'}>
         {t('rewards')}
-      </GoldStyledNav>
+      </StyledNavLink>
       <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
         {t('swap')}
       </StyledNavLink>

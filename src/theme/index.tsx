@@ -43,17 +43,16 @@ export function colors(darkMode: boolean): Colors {
     // text
     text1: darkMode ? '#FFFFFF' : '#000000',
     text2: darkMode ? '#A3A3A3' : '#1C1C1C',
-    text3: darkMode ? '#757575' : '#333333',
+    text3: darkMode ? '#757575' : '#A3A3A3',
     text4: darkMode ? '#333333' : '#A3A3A3',
     text5: darkMode ? '#333333' : '#F2F2F2',
 
     // NOTE: Rewards addition
-    // rewards
     rewardsText: darkMode ? 'gold' : '#A7BF2E',
 
     // backgrounds / greys
-    bg1: darkMode ? '#1C1C1C' : '#F7F8FA',
-    bg2: darkMode ? '#333333' : '#CED0D9',
+    bg1: darkMode ? '#000000' : '#F7F8FA',
+    bg2: darkMode ? '#1C1C1C' : '#EEEEEE',
     bg3: darkMode ? '#474747' : '#A7BF2E',
     bg4: darkMode ? '#616161' : '#CED0D9',
     bg5: darkMode ? '#F2F2F2' : '#616161',
@@ -215,7 +214,7 @@ html {
 }
 
 body {
-  background-color: ${({ theme }) => (theme.showBg ? '#bbbbbb' : '#00000000')};
+  background-color: ${({ theme }) => (theme.showBg ? '#dddddd' : '#00000000')};
   min-height: 100vh;
   background-position: 0 -30vh;
   background-repeat: no-repeat;
