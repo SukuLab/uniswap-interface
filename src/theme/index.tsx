@@ -21,7 +21,7 @@ const MEDIA_WIDTHS = {
 
 const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } = Object.keys(MEDIA_WIDTHS).reduce(
   (accumulator, size) => {
-    ;(accumulator as any)[size] = (a: any, b: any, c: any) => css`
+    ; (accumulator as any)[size] = (a: any, b: any, c: any) => css`
       @media (max-width: ${(MEDIA_WIDTHS as any)[size]}px) {
         ${css(a, b, c)}
       }
@@ -42,52 +42,52 @@ export function colors(darkMode: boolean): Colors {
 
     // text
     text1: darkMode ? '#FFFFFF' : '#000000',
-    text2: darkMode ? '#c6cbc3' : '#565A69',
-    text3: darkMode ? '#76846c' : '#888D9B',
-    text4: darkMode ? '#5b6956' : '#C3C5CB',
-    text5: darkMode ? '#30362c' : '#EDEEF2',
+    text2: darkMode ? '#A3A3A3' : '#1C1C1C',
+    text3: darkMode ? '#757575' : '#333333',
+    text4: darkMode ? '#333333' : '#A3A3A3',
+    text5: darkMode ? '#333333' : '#F2F2F2',
 
     // NOTE: Rewards addition
     // rewards
     rewardsText: darkMode ? 'gold' : '#A7BF2E',
 
     // backgrounds / greys
-    bg1: darkMode ? '#0f0b0a' : '#FFFFFF',
-    bg2: darkMode ? '#2f3032' : '#F7F8FA',
-    bg3: darkMode ? '#474747' : '#EDEEF2',
+    bg1: darkMode ? '#1C1C1C' : '#F7F8FA',
+    bg2: darkMode ? '#333333' : '#CED0D9',
+    bg3: darkMode ? '#474747' : '#A7BF2E',
     bg4: darkMode ? '#616161' : '#CED0D9',
-    bg5: darkMode ? '#565A69' : '#888D9B',
+    bg5: darkMode ? '#F2F2F2' : '#616161',
 
     //specialty colors
     modalBG: darkMode ? 'rgba(0,0,0,0.85)' : 'rgba(0,0,0,0.6)',
     advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
 
     //primary colors (greens)
-    primary1: darkMode ? '#b7e51f' : '#A7BF2E',
-    primary2: darkMode ? '#ace736' : '#FF8CC3',
-    primary3: darkMode ? '#a7ea4d' : '#FF99C9',
-    primary4: darkMode ? '#b1ea4d' : '#F6DDE8',
-    primary5: darkMode ? '#516f15' : '#ffffff',
+    primary1: darkMode ? '#A7BF2E' : '#A7BF2E',
+    primary2: darkMode ? '#BED60A' : '#BED60A',
+    primary3: darkMode ? '#D8F40C' : '#D8F40C',
+    primary4: darkMode ? '#798806' : '#A3A3A3',
+    primary5: darkMode ? '#798806' : '#D8F40C',
 
     // color text
-    primaryText1: darkMode ? '#a7ea4d' : '#A7BF2E',
+    // primaryText1: darkMode ? '#D8F40C' : '#1C1C1C',
+    primaryText1: darkMode ? '#F2F2F2' : '#1C1C1C',
 
     // secondary colors (Uniswap: Pinks)
     // secondary1: darkMode ? '#2172E5' : '#D8F40C',
-    secondary1: darkMode ? '#c4e51f' : '#A7BF2E',
-    secondary2: darkMode ? '#17000b26' : '#F6DDE8',
-    secondary3: darkMode ? '#17000b26' : '#FDEAF1',
+    secondary1: darkMode ? '#6566F3' : '#A7BF2E',
+    secondary2: darkMode ? '#17000b26' : '#F2F2F2',
+    secondary3: darkMode ? '#17000b26' : '#F2F2F2',
 
     // other
     red1: '#FF6871',
     red2: '#F82D3A',
     green1: '#27AE60',
     yellow1: '#FFE270',
-    yellow2: '#F3841E'
+    yellow2: '#F3841E',
 
-    // dont wanna forget these blue yet
-    // blue4: darkMode ? '#153d6f70' : '#C4D9F8',
-    // blue5: darkMode ? '#153d6f70' : '#EBF4FF',
+    //show bg color
+    showBg: darkMode ? false : true
   }
 }
 
@@ -102,7 +102,7 @@ export function theme(darkMode: boolean): DefaultTheme {
     },
 
     //shadows
-    shadow1: darkMode ? '#000' : '#2F80ED',
+    shadow1: darkMode ? '#000' : '#A7BF2E',
 
     // media queries
     mediaWidth: mediaWidthTemplates,
@@ -127,7 +127,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   return <StyledComponentsThemeProvider theme={themeObject}>{children}</StyledComponentsThemeProvider>
 }
 
-const TextWrapper = styled(Text)<{ color: keyof Colors }>`
+const TextWrapper = styled(Text) <{ color: keyof Colors }>`
   color: ${({ color, theme }) => (theme as any)[color]};
 `
 
@@ -215,11 +215,10 @@ html {
 }
 
 body {
+  background-color: ${({ theme }) => (theme.showBg ? '#bbbbbb' : '#00000000')};
   min-height: 100vh;
   background-position: 0 -30vh;
   background-repeat: no-repeat;
-  // TODO: Add this to theme
-  /* background-color: #d9d9d9; */
   background-image: ${({ theme }) =>
     `radial-gradient(50% 50% at 50% 50%, ${transparentize(0.9, theme.primary1)} 0%, ${transparentize(
       1,

@@ -47,6 +47,9 @@ export interface Colors {
   green1: Color
   yellow1: Color
   yellow2: Color
+
+  // show bg color
+  showBg: boolean
 }
 
 export interface Grids {
