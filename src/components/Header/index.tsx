@@ -177,9 +177,11 @@ export default function Header() {
             </AccountElement>
           </HeaderElement>
           <HeaderElementWrap>
-            <VersionSwitch />
+            {/* TODO: Document removal of VersionSwitch */}
+            {/* <VersionSwitch /> */}
             <Settings />
-            <Menu />
+            {/* TODO: Document removal of Menu*/}
+            {/* <Menu /> */}
           </HeaderElementWrap>
         </HeaderControls>
       </RowBetween>

@@ -27,6 +27,7 @@ export default function Web3ReactManager({ children }) {
   // try to eagerly connect to an injected provider, if it exists and has granted access already
   const triedEager = useEagerConnect()
 
+  // NOTE: Really love this approach of checking for an active wallet connection and if not using the API key
   // after eagerly trying injected, if the network connect ever isn't active or in an error state, activate itd
   useEffect(() => {
     if (triedEager && !networkActive && !networkError && !active) {
