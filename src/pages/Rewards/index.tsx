@@ -25,6 +25,7 @@ import { Dots } from '../../components/swap/styleds'
 export default function Pool() {
   const theme = useContext(ThemeContext)
   const { account } = useActiveWeb3React()
+  // TODO: Pull out into own hook
   const sukuToken = useToken('0x0763fdccf1ae541a5961815c0872a8c5bc6de4d7')
 
   // fetch the balance of the rewards account

@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI } from '@uniswap/sdk'
+import { CurrencyAmount, Currency, JSBI } from '@uniswap/sdk'
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { ArrowDown } from 'react-feather'
 import ReactGA from 'react-ga'
@@ -48,6 +48,7 @@ import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
 import { ClickableText } from '../Pool/styleds'
+import { useToken } from '../../hooks/Tokens'
 
 export default function Swap() {
   useDefaultsFromURLSearch()
@@ -250,6 +251,13 @@ export default function Swap() {
   const [dismissedToken1] = useTokenWarningDismissal(chainId, currencies[Field.OUTPUT])
   const showWarning =
     (!dismissedToken0 && !!currencies[Field.INPUT]) || (!dismissedToken1 && !!currencies[Field.OUTPUT])
+
+  // TODO: Pull out into own hook
+  // TODO: Document change
+  const sukuToken = useToken('0x0763fdccf1ae541a5961815c0872a8c5bc6de4d7')
+  if (!currencies[Field.OUTPUT]) {
+    onCurrencySelection(Field.OUTPUT, sukuToken as Currency)
+  }
 
   return (
     <>
