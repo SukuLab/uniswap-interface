@@ -108,34 +108,49 @@ const UniIcon = styled.div`
   `};
 `
 
+const HeaderContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 1rem 1rem 0 1rem;
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+     flex-direction: column;
+     align-items: center;
+  `}
+`
+
 const SukuIcon = styled.div`
   img {
     padding-left: 1rem;
     height: 6rem;
   }
-  ${({ theme }) => theme.mediaWidth.upToSmall`
+  /* ${({ theme }) => theme.mediaWidth.upToSmall`
     img { 
       padding-left: .5rem;
       height: 2.5rem;
     }
-  `};
+  `}; */
 `
 
 const HeaderControls = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
 
-  ${({ theme }) => theme.mediaWidth.upToSmall`
+  /* ${({ theme }) => theme.mediaWidth.upToSmall`
     flex-direction: column;
     align-items: flex-end;
-  `};
+  `}; */
 `
 
 const BalanceText = styled(Text)`
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  /* ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     display: none;
-  `};
+  `}; */
 `
 
 const NETWORK_LABELS: { [chainId in ChainId]: string | null } = {
@@ -154,7 +169,8 @@ export default function Header() {
 
   return (
     <HeaderFrame>
-      <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
+      {/* <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem"> */}
+      <HeaderContainer>
         <HeaderElement>
           <Title href=".">
             <SukuIcon>
@@ -162,6 +178,7 @@ export default function Header() {
             </SukuIcon>
           </Title>
         </HeaderElement>
+
         <HeaderControls>
           <HeaderElement>
             <TestnetWrapper>
@@ -184,7 +201,9 @@ export default function Header() {
             {/* <Menu /> */}
           </HeaderElementWrap>
         </HeaderControls>
-      </RowBetween>
+
+        {/* </RowBetween> */}
+      </HeaderContainer>
     </HeaderFrame>
   )
 }

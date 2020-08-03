@@ -100,9 +100,11 @@ const MenuFlyout = styled.span`
   right: 0rem;
   z-index: 100;
 
+  // TODO: Submit PR to remove the right -46px as it's gonig off screen on mobile
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     min-width: 18.125rem;
-    right: -46px;
+    // right: -46px; 
+    right: 0px;
   `};
 `
 
