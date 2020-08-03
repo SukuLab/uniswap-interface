@@ -43,6 +43,21 @@ const StyledNavLink = styled(NavLink).attrs({
   }
 `
 
+// NOTE: Rewards Addition
+const GoldStyledNav = styled(StyledNavLink)`
+  color: ${({ theme }) => theme.rewardsText};
+  font-size: 20px;
+
+  &.${activeClassName} {
+    color: ${({ theme }) => theme.text1};
+  }
+
+  :hover,
+  :focus {
+    color: ${({ theme }) => darken(0.1, theme.text1)};
+  }
+`
+
 const ActiveText = styled.div`
   font-weight: 500;
   font-size: 20px;
@@ -56,10 +71,10 @@ export function SwapPoolTabs({ active }: { active: 'rewards' | 'swap' | 'pool' }
   const { t } = useTranslation()
   return (
     <Tabs style={{ marginBottom: '20px' }}>
-      {/* TODO Make sure nav is setup as needed for this */}
-      <StyledNavLink id={`swap-nav-link`} to={'/rewards'} isActive={() => active === 'rewards'}>
+      {/* NOTE: Rewards addition */}
+      <GoldStyledNav id={`swap-nav-link`} to={'/rewards'} isActive={() => active === 'rewards'}>
         {t('rewards')}
-      </StyledNavLink>
+      </GoldStyledNav>
       <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
         {t('swap')}
       </StyledNavLink>

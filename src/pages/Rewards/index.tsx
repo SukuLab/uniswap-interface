@@ -71,13 +71,6 @@ export default function Pool() {
       <AppBody>
         <SwapPoolTabs active={'rewards'} />
         <AutoColumn gap="lg" justify="center">
-          {/* TODO Remove Comment*/}
-          {/* <ButtonPrimary id="join-pool-button" as={Link} style={{ padding: 16 }} to="/add/ETH">
-            <Text fontWeight={500} fontSize={20}>
-              Add Liquidity
-            </Text>
-          </ButtonPrimary> */}
-
           {/* 
               Public Rewards 
           */}
@@ -88,12 +81,11 @@ export default function Pool() {
                 Total Rewards
               </Text>
               {/* TODO: Provide information on where to find offical deets about the campagin? */}
-              {/* FIXME: Update this text */}
-              <Question text="Provide liquidity for SUKU and earn SUKU rewards." />
+              <Question text="Total SUKU rewards for providing liquidity." />
             </RowBetween>
             <LightCard padding="20px">
               <TYPE.largeHeader color={theme.primary1} textAlign="center">
-                {/* FIXME: Set as an env variable */}
+                {/* TODO: Set as an env variable */}
                 3,200,000 SUKU
               </TYPE.largeHeader>
             </LightCard>
@@ -106,8 +98,8 @@ export default function Pool() {
                 Rewards Remaining
               </Text>
               {/* TODO: Provide information on where to find offical deets about the campagin? */}
-              {/* FIXME: Update this text */}
-              <Question text="Provide liquidity for SUKU and earn SUKU rewards." />
+              {/* TODO: Add a link to etherscan */}
+              <Question text="Rewards left to be sent for providing liquidity." />
             </RowBetween>
             <LightCard padding="20px">
               <TYPE.largeHeader color={theme.primary1} textAlign="center">

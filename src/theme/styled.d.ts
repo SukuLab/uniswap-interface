@@ -13,6 +13,10 @@ export interface Colors {
   text4: Color
   text5: Color
 
+  // NOTE: Rewards addition
+  // rewards
+  rewardsText: Color
+
   // backgrounds / greys
   bg1: Color
   bg2: Color
