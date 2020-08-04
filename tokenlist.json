@@ -15,11 +15,11 @@
   "tokens": [
     {
       "name": "SUKU",
-      "address": "0x0763fdccf1ae541a5961815c0872a8c5bc6de4d7",
+      "address": "0x0763fdCCF1aE541A5961815C0872A8c5Bc6DE4d7",
       "symbol": "SUKU",
       "decimals": 18,
       "chainId": 1,
-      "logoURI": "https://raw.githubusercontent.com/SukuLab/uniswap-interface/suku/src/assets/images/suku-circle.png"
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x0763fdCCF1aE541A5961815C0872A8c5Bc6DE4d7/logo.png"
     },
     {
       "name": "Wrapped Ether",
