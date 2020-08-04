@@ -30,7 +30,7 @@ export default function Pool() {
 
   // fetch the balance of the rewards account
   // TODO: Pull Rewards address out into env variable
-  const rewardBalance = useTokenBalance('0xc05ec5235ce6050375adce1f86bbec949c3c366f', sukuToken ?? undefined)
+  const rewardBalance = useTokenBalance('0x2465163431c6Ef3bd27D8107Ef84897C1953b163', sukuToken ?? undefined)
   const sukuRewardsText = rewardBalance
     ? `${parseInt(rewardBalance.toSignificant(4)).toLocaleString()} SUKU`
     : `Loading`
