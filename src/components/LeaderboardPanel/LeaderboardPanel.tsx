@@ -24,6 +24,7 @@ export const BodyWrapper = styled.div<{ disabled?: boolean }>`
  ${({ theme }) => theme.mediaWidth.upToLarge`
     position: relative;
     padding: 0;
+    padding-top: 1rem;
   `};
 `
 
