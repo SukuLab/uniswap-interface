@@ -22,8 +22,11 @@ import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redir
 import Swap from './Swap'
 import Rewards from './Rewards'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
+
 import GeofenceModal from '../components/GeofenceModal'
 import AddTokenMetaMask from '../components/AddTokenMetaMask/AddTokenMetaMask'
+import LeaderboardPanel from '../components/LeaderboardPanel/LeaderboardPanel'
+import AppBody from './AppBody'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -102,6 +105,7 @@ export default function App() {
                 <Route component={RedirectPathToSwapOnly} />
               </Switch>
             </Web3ReactManager>
+            <LeaderboardPanel />
             <AddTokenMetaMask show={!showConfirm} />
             <Marginer />
           </BodyWrapper>
