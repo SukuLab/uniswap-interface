@@ -48,7 +48,7 @@ export function colors(darkMode: boolean): Colors {
     text5: darkMode ? '#333333' : '#F2F2F2',
 
     // NOTE: Rewards addition
-    rewardsText: darkMode ? 'gold' : '#A7BF2E',
+    rewardsText: darkMode ? '#798806' : '#A7BF2E',
 
     // backgrounds / greys
     bg1: darkMode ? '#000000' : '#F7F8FA',
