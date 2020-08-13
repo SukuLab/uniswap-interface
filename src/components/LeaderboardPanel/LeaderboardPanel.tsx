@@ -39,9 +39,9 @@ export const HoverCard = styled(Card)`
   }
 `
 
-interface LeaderboardPanelProps {}
+interface LeaderboardPanelProps { }
 
-export default function LeaderboardPanel({}: LeaderboardPanelProps) {
+export default function LeaderboardPanel({ }: LeaderboardPanelProps) {
   const theme = useContext(ThemeContext)
   const [leaderboard, setLeaderboard] = useState([])
   const ranks = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th']
@@ -84,8 +84,11 @@ export default function LeaderboardPanel({}: LeaderboardPanelProps) {
     <BodyWrapper>
       <GreyCard>
         <AutoColumn gap="18px">
+          <Text fontWeight={700} fontSize={32}>
+            Week 1 Rewards
+          </Text>
           <Text fontWeight={700} fontSize={24}>
-            Top 10 Liquidity Providers Leaderboard
+            Top 10 Liquidity Providers
           </Text>
           <FixedHeightRow style={{ justifyContent: 'flex-end', height: '48px' }}>
             {/* <Text color={theme.rewardsText} fontSize={18} fontWeight={700}>
