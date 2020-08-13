@@ -41,7 +41,7 @@ export const HoverCard = styled(Card)`
 
 interface LeaderboardPanelProps {}
 
-export default function LeaderboardPanel({ }: LeaderboardPanelProps) {
+export default function LeaderboardPanel({}: LeaderboardPanelProps) {
   const theme = useContext(ThemeContext)
   const [leaderboard, setLeaderboard] = useState([])
   const ranks = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th']
@@ -63,18 +63,18 @@ export default function LeaderboardPanel({ }: LeaderboardPanelProps) {
     const fontWeight = index > 2 ? 500 : 700
 
     return (
-      <FixedHeightRow key={leader[0]} style={{ justifyContent: 'space-around' }}>
+      <FixedHeightRow key={leader[0]} style={{ justifyContent: 'flex-start' }}>
         {/* <Text color="#888D9B" fontSize={16} fontWeight={fontWeight}>
           {ranks[index]}
         </Text> */}
-        <Text color="#888D9B" fontSize={16} fontWeight={fontWeight}>
+        <Text color="#888D9B" fontSize={16} fontWeight={fontWeight} textAlign={'right'} style={{ width: '33%' }}>
+          {leader[3]}
+        </Text>
+        <Text color="#888D9B" fontSize={16} fontWeight={fontWeight} textAlign={'right'} style={{ width: '33%' }}>
           {leader[1]}
         </Text>
-        <Text color="#888D9B" fontSize={16} fontWeight={fontWeight}>
+        <Text color="#888D9B" fontSize={16} fontWeight={fontWeight} textAlign={'right'} style={{ width: '33%' }}>
           {leader[2]}
-        </Text>
-        <Text color="#888D9B" fontSize={16} fontWeight={fontWeight}>
-          {leader[3]}
         </Text>
       </FixedHeightRow>
     )
@@ -85,20 +85,20 @@ export default function LeaderboardPanel({ }: LeaderboardPanelProps) {
       <GreyCard>
         <AutoColumn gap="18px">
           <Text fontWeight={700} fontSize={24}>
-            Top 10 Liquiditiy Providers Leaderboard
+            Top 10 Liquidity Providers Leaderboard
           </Text>
-          <FixedHeightRow style={{ justifyContent: 'space-around', height: '48px' }}>
+          <FixedHeightRow style={{ justifyContent: 'flex-end', height: '48px' }}>
             {/* <Text color={theme.rewardsText} fontSize={18} fontWeight={700}>
               Rank
             </Text> */}
-            <Text color={theme.rewardsText} fontSize={18} fontWeight={700} textAlign={'center'}>
-              SUKU Rewards
-            </Text>
-            <Text color={theme.rewardsText} fontSize={18} fontWeight={700} textAlign={'center'}>
-              Rewards USD*
-            </Text>
             <Text color={theme.rewardsText} fontSize={18} fontWeight={700} textAlign={'center'} width={'140px'}>
               Liquidity Provided USD*
+            </Text>
+            <Text color={theme.rewardsText} fontSize={18} fontWeight={700} textAlign={'center'} width={'33%'}>
+              SUKU Rewards
+            </Text>
+            <Text color={theme.rewardsText} fontSize={18} fontWeight={700} textAlign={'center'} width={'33%'}>
+              Rewards USD*
             </Text>
           </FixedHeightRow>
           {leaderview}
