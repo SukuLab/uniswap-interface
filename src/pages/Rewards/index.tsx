@@ -67,7 +67,7 @@ export default function Pool() {
 
   const hasV1Liquidity = useUserHasLiquidityInAllTokens()
 
-  const openUrl = url => {
+  const openUrl = (url: string) => {
     const win = window.open(url, '_blank')
     if (win != null) {
       win.focus()

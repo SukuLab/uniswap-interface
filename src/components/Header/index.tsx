@@ -30,7 +30,7 @@ const HeaderFrame = styled.div`
   top: 0;
   position: absolute;
   z-index: 2;
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  ${({ theme }) => theme.mediaWidth.upToSmall`
     padding: 12px 0 0 0;
     width: calc(100%);
     position: relative;
@@ -46,9 +46,9 @@ const HeaderElementWrap = styled.div`
   display: flex;
   align-items: center;
 
-  ${({ theme }) => theme.mediaWidth.upToSmall`
+  /* ${({ theme }) => theme.mediaWidth.upToSmall`
     margin-top: 0.5rem;
-`};
+`}; */
 `
 
 const Title = styled.a`

@@ -39,13 +39,9 @@ export const HoverCard = styled(Card)`
   }
 `
 
-interface LeaderboardPanelProps {
-  // pair: Pair
-  // showUnwrapped?: boolean
-  border?: string
-}
+interface LeaderboardPanelProps {}
 
-export default function LeaderboardPanel({ border }: LeaderboardPanelProps) {
+export default function LeaderboardPanel({ }: LeaderboardPanelProps) {
   const theme = useContext(ThemeContext)
   const [leaderboard, setLeaderboard] = useState([])
   const ranks = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th']
@@ -86,7 +82,7 @@ export default function LeaderboardPanel({ border }: LeaderboardPanelProps) {
 
   return (
     <BodyWrapper>
-      <GreyCard border={border}>
+      <GreyCard>
         <AutoColumn gap="18px">
           <Text fontWeight={700} fontSize={24}>
             Top 10 Liquiditiy Providers Leaderboard
