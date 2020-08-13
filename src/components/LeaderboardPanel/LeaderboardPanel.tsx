@@ -68,14 +68,17 @@ export default function LeaderboardPanel({ border }: LeaderboardPanelProps) {
 
     return (
       <FixedHeightRow key={leader[0]} style={{ justifyContent: 'space-around' }}>
-        <Text color="#888D9B" fontSize={16} fontWeight={fontWeight}>
+        {/* <Text color="#888D9B" fontSize={16} fontWeight={fontWeight}>
           {ranks[index]}
-        </Text>
+        </Text> */}
         <Text color="#888D9B" fontSize={16} fontWeight={fontWeight}>
           {leader[1]}
         </Text>
         <Text color="#888D9B" fontSize={16} fontWeight={fontWeight}>
           {leader[2]}
+        </Text>
+        <Text color="#888D9B" fontSize={16} fontWeight={fontWeight}>
+          {leader[3]}
         </Text>
       </FixedHeightRow>
     )
@@ -88,20 +91,23 @@ export default function LeaderboardPanel({ border }: LeaderboardPanelProps) {
           <Text fontWeight={700} fontSize={24}>
             Top 10 Liquiditiy Providers Leaderboard
           </Text>
-          <FixedHeightRow style={{ justifyContent: 'space-around' }}>
-            <Text color={theme.rewardsText} fontSize={18} fontWeight={700}>
+          <FixedHeightRow style={{ justifyContent: 'space-around', height: '48px' }}>
+            {/* <Text color={theme.rewardsText} fontSize={18} fontWeight={700}>
               Rank
-            </Text>
-            <Text color={theme.rewardsText} fontSize={18} fontWeight={700}>
+            </Text> */}
+            <Text color={theme.rewardsText} fontSize={18} fontWeight={700} textAlign={'center'}>
               SUKU Rewards
             </Text>
-            <Text color={theme.rewardsText} fontSize={18} fontWeight={700}>
-              USD Rewards*
+            <Text color={theme.rewardsText} fontSize={18} fontWeight={700} textAlign={'center'}>
+              Rewards USD*
+            </Text>
+            <Text color={theme.rewardsText} fontSize={18} fontWeight={700} textAlign={'center'} width={'140px'}>
+              Liquidity Provided USD*
             </Text>
           </FixedHeightRow>
           {leaderview}
           <Text color="#888D9B" fontSize={12} fontWeight={500}>
-            *USD Amount based on SUKU price at distribution
+            *USD Amount based on price at distribution
           </Text>
         </AutoColumn>
       </GreyCard>

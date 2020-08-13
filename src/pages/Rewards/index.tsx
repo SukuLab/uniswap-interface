@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components'
 import { Pair } from '@uniswap/sdk'
 import { Link } from 'react-router-dom'
 import { SwapPoolTabs } from '../../components/NavigationTabs'
+import { ExternalLink as LinkIcon } from 'react-feather'
 
 import Question from '../../components/QuestionHelper'
 import FullPositionCard from '../../components/PositionCard'
@@ -66,22 +67,36 @@ export default function Pool() {
 
   const hasV1Liquidity = useUserHasLiquidityInAllTokens()
 
+  const openUrl = url => {
+    const win = window.open(url, '_blank')
+    if (win != null) {
+      win.focus()
+    }
+  }
+
   return (
     <>
       <AppBody>
         <SwapPoolTabs active={'rewards'} />
         <AutoColumn gap="lg" justify="center">
-          {/* 
-              Public Rewards 
-          */}
-          {/* Total Rewards */}
           <AutoColumn gap="12px" style={{ width: '100%' }}>
+            <RowBetween padding={'0 8px'}>
+              <ButtonPrimary
+                onClick={() => {
+                  openUrl('https://www.suku.world/liquidity')
+                }}
+                style={{ fontSize: '16px' }}
+              >
+                <LinkIcon size={16} style={{ position: 'relative', right: '10px' }} />
+                {` Liquiditiy Mining Campaign Details`}
+              </ButtonPrimary>
+            </RowBetween>
             <RowBetween padding={'0 8px'}>
               <Text color={theme.text1} fontWeight={500}>
                 Total Rewards
               </Text>
               {/* TODO: Provide information on where to find offical deets about the campagin? */}
-              <Question text="Total SUKU rewards for providing liquidity." />
+              <Question text="Provide liquidity to the SUKU-ETH liquidity pool and earn SUKU rewards. DISCLAIMER: Liquidity pools come with possible severe risk. Please do not engage with any liquidity pools unless you are aware of the risks. (tip: start with impermanent loss)" />
             </RowBetween>
             <LightCard padding="20px">
               <TYPE.largeHeader color={theme.primary1} textAlign="center">
@@ -99,7 +114,7 @@ export default function Pool() {
               </Text>
               {/* TODO: Provide information on where to find offical deets about the campagin? */}
               {/* TODO: Add a link to etherscan */}
-              <Question text="Rewards left to be sent for providing liquidity." />
+              <Question text="400,000 SUKU will be distributed each Monday after being calcualted at 12:00 PM EST." />
             </RowBetween>
             <LightCard padding="20px">
               <TYPE.largeHeader color={theme.primary1} textAlign="center">
@@ -112,9 +127,9 @@ export default function Pool() {
           <AutoColumn gap="12px" style={{ width: '100%' }}>
             <RowBetween padding={'0 8px'}>
               <Text color={theme.text1} fontWeight={500}>
-                Your Reward Status
+                Your Reward Stake
               </Text>
-              <Question text="See the rewards status of your Web3 connected account." />
+              <Question text="Liquidity must be kept in the pool for an entire week Monday (12:00 PM EST) - Monday (12:00 PM EST). Liquidity weight multiplies up to 3x after 4 weeks." />
             </RowBetween>
 
             {!account ? (
