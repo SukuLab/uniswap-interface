@@ -96,7 +96,7 @@ export default function Pool() {
                 Total Rewards
               </Text>
               {/* TODO: Provide information on where to find offical deets about the campagin? */}
-              <Question text="Provide liquidity to the SUKU-ETH liquidity pool and earn SUKU rewards. DISCLAIMER: Liquidity pools come with possible severe risk. Please do not engage with any liquidity pools unless you are aware of the risks. (tip: start with impermanent loss)" />
+              <Question text="Provide liquidity to the SUKU-ETH liquidity pool and earn SUKU rewards. DISCLAIMER: Liquidity pools come with possible severe risk. Please do not engage with any liquidity pool unless you are aware of the risks." />
             </RowBetween>
             <LightCard padding="20px">
               <TYPE.largeHeader color={theme.primary1} textAlign="center">
@@ -151,13 +151,13 @@ export default function Pool() {
                 ))}
               </>
             ) : (
-              <LightCard padding="40px">
-                <TYPE.body color={theme.text3} textAlign="center">
-                  {/* TODO: Find Current Share Ownership of Pool Tokens * value of tokens (etherscan api) */}
+                    <LightCard padding="40px">
+                      <TYPE.body color={theme.text3} textAlign="center">
+                        {/* TODO: Find Current Share Ownership of Pool Tokens * value of tokens (etherscan api) */}
                   No liquidity found.
                 </TYPE.body>
-              </LightCard>
-            )}
+                    </LightCard>
+                  )}
           </AutoColumn>
         </AutoColumn>
       </AppBody>
