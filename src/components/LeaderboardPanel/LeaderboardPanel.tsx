@@ -85,7 +85,7 @@ export default function LeaderboardPanel({ }: LeaderboardPanelProps) {
       <GreyCard>
         <AutoColumn gap="18px">
           <Text fontWeight={700} fontSize={32}>
-            Week 2 Rewards
+            Week 3 Rewards
           </Text>
           <Text fontWeight={700} fontSize={24}>
             Top 10 Liquidity Providers
