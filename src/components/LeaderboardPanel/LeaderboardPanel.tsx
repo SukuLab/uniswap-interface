@@ -51,8 +51,6 @@ export default function LeaderboardPanel({ }: LeaderboardPanelProps) {
       const response = await axios(
         'https://raw.githubusercontent.com/SukuLab/liquidity-mining-rewards-script/master/results/leaderboard.json'
       )
-      console.log('RESPONSE:')
-      console.log(response.data)
       setLeaderboard(response.data)
     }
     fetchData()
@@ -85,7 +83,7 @@ export default function LeaderboardPanel({ }: LeaderboardPanelProps) {
       <GreyCard>
         <AutoColumn gap="18px">
           <Text fontWeight={700} fontSize={32}>
-            Week 3 Rewards
+            Week 4 Rewards
           </Text>
           <Text fontWeight={700} fontSize={24}>
             Top 10 Liquidity Providers
