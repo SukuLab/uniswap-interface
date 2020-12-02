@@ -72,9 +72,10 @@ export function SwapPoolTabs({ active }: { active: 'rewards' | 'swap' | 'pool' }
   return (
     <Tabs style={{ marginBottom: '20px' }}>
       {/* NOTE: Rewards addition */}
-      <StyledNavLink id={`swap-nav-link`} to={'/rewards'} isActive={() => active === 'rewards'}>
+      {/* Display available rewards during liquidity mining campaigns */}
+      {/* <StyledNavLink id={`swap-nav-link`} to={'/rewards'} isActive={() => active === 'rewards'}>
         {t('rewards')}
-      </StyledNavLink>
+      </StyledNavLink> */}
       <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
         {t('swap')}
       </StyledNavLink>

@@ -89,6 +89,7 @@ export default function LeaderboardPanel({ }: LeaderboardPanelProps) {
             Top 10 Liquidity Providers
           </Text>
           <FixedHeightRow style={{ justifyContent: 'flex-end', height: '48px' }}>
+            {/* Display available rewards during liquidity mining campaigns */}
             {/* <Text color={theme.rewardsText} fontSize={18} fontWeight={700}>
               Rank
             </Text> */}
