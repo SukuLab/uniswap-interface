@@ -105,7 +105,8 @@ export default function App() {
                 <Route component={RedirectPathToSwapOnly} />
               </Switch>
             </Web3ReactManager>
-            <LeaderboardPanel />
+            {/* The LeaderboardPanel is used to display rewards during liquidity mining campaigns */}
+            {/* <LeaderboardPanel /> */}
             <AddTokenMetaMask show={!showConfirm} />
             <Marginer />
           </BodyWrapper>
